@@ -8,6 +8,14 @@ export default [
     icon: { icon: 'ri-home-line' },
   },
   {
+    heading: 'Finance',
+  },
+  {
+    title: 'Income & Expenses',
+    to: { name: 'transaction-page' },
+    icon: { icon: 'ri-exchange-dollar-line' },
+  },
+  {
     heading: 'Admin',
   },
   {

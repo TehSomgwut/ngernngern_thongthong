@@ -1,5 +1,5 @@
 {
-  "name": "starter-backend",
+  "name": "ngernngern_thongthong-backend",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -8,8 +8,8 @@
     "deploy": "wrangler deploy",
     "typecheck": "tsc --noEmit",
     "build:lambda": "esbuild src/lambda.ts --bundle --platform=node --target=node20 --format=esm --outfile=dist/lambda/index.mjs",
-    "db:migrate:local": "wrangler d1 migrations apply starter-db --local",
-    "db:migrate:remote": "wrangler d1 migrations apply starter-db --remote",
+    "db:migrate:local": "wrangler d1 migrations apply ngernngern_thongthong-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply ngernngern_thongthong-db --remote",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
@@ -22,7 +22,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260708.1",
     "esbuild": "^0.25.5",
-    "typescript": "^5.8.0",
+    "typescript": "^5.9.3",
     "wrangler": "^4.23.0"
   }
 }
