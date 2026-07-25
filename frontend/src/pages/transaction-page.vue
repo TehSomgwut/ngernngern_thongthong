@@ -33,13 +33,13 @@ const form = ref<CreateTransactionBody>({
   date: new Date().toISOString().split('T')[0],
 })
 
-const categories = computed(() =>
-  form.value.type === 'income' ? INCOME_CATEGORIES : EXPENSE_CATEGORIES
+const categories = computed<string[]>(() =>
+  form.value.type === 'income' ? [...INCOME_CATEGORIES] : [...EXPENSE_CATEGORIES]
 )
 
 // Reset category when type changes
 watch(() => form.value.type, () => {
-  form.value.category = categories.value[0]
+  form.value.category = categories.value[0] as string
 })
 
 function openCreate() {
@@ -47,7 +47,7 @@ function openCreate() {
   form.value = {
     type: 'expense',
     amount: 0,
-    category: 'food',
+    category: 'food' as string,
     description: '',
     date: new Date().toISOString().split('T')[0],
   }
